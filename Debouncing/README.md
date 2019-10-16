@@ -1,6 +1,5 @@
 # Software Debouncing
-In this part of the lab I had to utilize a debouncing signal. This has to be done was adding a mechanical switch to digital circuits so when the button is pressed once it doesn't appear like multiple presses. 
-Debouncing a signal is a necessary step when adding mechanical switches to digital circuits so a single press doesn't appear like multiple presses. You're going to need this feature in a later portion of this lab as you'll be using a button press to change the duty cycle of your signal and you don't want to count the "false positives" as a button press. Debouncing is also only one of many applications which would require the use of built in Timers to allow for other processes to take place. Check out this nice tutorial on the subject. [http://www.labbookpages.co.uk/electronics/debounce.html]
+In this part of the lab I had to utilize a debouncing signal. This has to be done was adding a mechanical switch to digital circuits so when the button is pressed once it doesn't appear like multiple presses. This insures that you don't get false positives. In this part for the MSP430FR6989 the button would turn the LED on and off and for the MSP430G2553 when the button is pressed down the LED will toggle on and off and when its let go it wi stay at the state it was last at. Since theres a debouncing signal it will prevent the board fromo reading multiple pressed from the switch.
 
 ## Processors Utilized
 MSP430G2553
