@@ -1,15 +1,12 @@
 # Hardware PWM
-Now that you have done the software version of PWM, it is time to start leveraging other features of these Timer Modules.
+In this part of the lab I replicated the behavior of the software PWM but with hardware PWM. The LED duty cycle would be intially set to 50% and when the button is pressed it increases by 10 % every time until it reaches 100% then it resets to 0% on the next button press. 2 timers were instantiated 1 was used for the button deboucing and the other used the processors interal PWM function. 
 
-## Task
-Replicate the same behavior as in the software PWM, but by using the Timer Modules ability to directly output to a GPIO Pin instead of managing them in software. One way to think about this is: unless there are other functions running in your code, your system should initialize, set the Timer Modules, and then turn off the CPU.
+## Processors Utilized
+MSP430FR6989
+MSP430G2553
 
-## Deliverables
-You will need to have two folders in this repository, one for each of the processors that you used for this part of the lab. Remember to replace this README with your own.
+## Dependencies
+The only dependency is the library called MSP430.h. this is used for all TI MSP 430 processors.
 
-### Hints
-Read up on the P1SEL registers as well as look at the Timer modules ability to multiplex.
-
-## Extra Work
-### Using ACLK
-Some of these microprocessors have a built in ACLK which is extremely slow compared to the up to 25MHz available on some of them. What is the overall impact on the system when using this clock? Can you actually use your PWM code with a clock that slow?
+## Differences in the Processors
+For the MSP430FR6989 I had to disable the GPIO power on default high impedence mode. This allowed me to activate previously configured port settings. If you don't do this you can not use the on board LEDs. The only other difference in the code is the pin assignments specific to each board
